@@ -158,7 +158,7 @@ export function Reviews() {
                 ))}
               </div>
               <p className="text-xs text-muted-foreground">
-                <span className="text-white font-semibold">1000+ clients</span> trust VEXORQ for their web projects
+                <span className="text-white font-semibold"> clients</span> trust VEXORQ for their web projects
               </p>
             </div>
           </div>
