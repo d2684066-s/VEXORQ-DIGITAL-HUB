@@ -1,2 +1,2 @@
-export * from "./generated/api";
-export * from "./generated/types";
+export { HealthCheckResponse, SubmitQueryBody } from "./generated/api";
+export type { ErrorResponse, HealthStatus, QueryResponse } from "./generated/types";
