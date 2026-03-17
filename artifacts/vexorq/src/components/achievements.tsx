@@ -24,10 +24,10 @@ function Counter({ from, to, suffix = "", duration = 2 }: { from: number; to: nu
 }
 
 const stats = [
-  { icon: CheckCircle2, hasCounter: true, value: 1000, suffix: "+", label: "Successfully Delivered Projects" },
-  { icon: TrendingUp, hasCounter: false, value: null, suffix: "", label: "Trusted by Growing Businesses" },
-  { icon: Globe, hasCounter: true, value: 10, suffix: "+", label: "Multi-Platform Web Technologies" },
-  { icon: HeartHandshake, hasCounter: true, value: 99, suffix: "%", label: "Customer Satisfaction Rate" },
+  { icon: CheckCircle2, hasCounter: true, value: 1000, suffix: "+", label: "Successfully Delivered Projects", special: null },
+  { icon: TrendingUp, hasCounter: false, value: null, suffix: "", label: "Trusted by Growing Businesses", special: "∞" },
+  { icon: Globe, hasCounter: true, value: 10, suffix: "+", label: "Multi-Platform Web Technologies", special: null },
+  { icon: HeartHandshake, hasCounter: true, value: 99, suffix: "%", label: "Customer Satisfaction Rate", special: null },
 ];
 
 const deliveredProjects = [
@@ -117,8 +117,8 @@ export function Achievements() {
                 {stat.hasCounter && stat.value !== null ? (
                   <Counter from={0} to={stat.value} suffix={stat.suffix} />
                 ) : (
-                  <span className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Growing
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {stat.special}
                   </span>
                 )}
               </div>
