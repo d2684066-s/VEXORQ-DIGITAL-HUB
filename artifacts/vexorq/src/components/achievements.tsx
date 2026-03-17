@@ -102,7 +102,7 @@ export function Achievements() {
         {/* Stats Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
 
-          {/* First card — Multiple Projects Accomplished */}
+          {/* First card — Multiple Projects Delivered */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -113,25 +113,28 @@ export function Achievements() {
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5">
               <CheckCircle2 className="w-8 h-8 text-primary" />
             </div>
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Projects Accomplished</p>
-            <div className="w-full space-y-2">
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Projects Delivered</p>
+            <div className="w-full grid grid-cols-2 gap-2">
               {[
-                { label: "Business Websites", count: "320+", color: "text-cyan-400", bg: "bg-cyan-500/10 border-cyan-500/20" },
-                { label: "E-Commerce Stores", count: "210+", color: "text-violet-400", bg: "bg-violet-500/10 border-violet-500/20" },
-                { label: "Web Applications",  count: "180+", color: "text-pink-400",   bg: "bg-pink-500/10 border-pink-500/20" },
-                { label: "Portfolios & Blogs", count: "150+", color: "text-emerald-400",bg: "bg-emerald-500/10 border-emerald-500/20" },
-                { label: "Redesign Projects",  count: "140+", color: "text-amber-400",  bg: "bg-amber-500/10 border-amber-500/20" },
+                { title: "ShopEase", type: "E-Commerce", icon: ShoppingCart, color: "text-cyan-400", bg: "bg-cyan-500/10 border-cyan-500/20" },
+                { title: "TechCorp", type: "Business", icon: Briefcase, color: "text-violet-400", bg: "bg-violet-500/10 border-violet-500/20" },
+                { title: "CreativeHub", type: "Portfolio", icon: Layout, color: "text-pink-400", bg: "bg-pink-500/10 border-pink-500/20" },
+                { title: "TaskFlow", type: "Web App", icon: Cpu, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" },
+                { title: "StyleUp", type: "Redesign", icon: Palette, color: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/20" },
+                { title: "HostPro", type: "Dashboard", icon: Globe, color: "text-sky-400", bg: "bg-sky-500/10 border-sky-500/20" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
-                  className={`flex items-center justify-between px-3 py-2 rounded-lg border ${item.bg} text-left`}
+                  transition={{ duration: 0.3, delay: 0.1 + i * 0.06 }}
+                  className={`flex flex-col items-center gap-1 px-2 py-2.5 rounded-xl border ${item.bg}`}
                 >
-                  <span className="text-xs text-muted-foreground">{item.label}</span>
-                  <span className={`text-xs font-bold ${item.color}`}>{item.count}</span>
+                  <item.icon className={`w-4 h-4 ${item.color}`} />
+                  <span className="text-xs font-semibold text-white leading-tight">{item.title}</span>
+                  <span className="text-[10px] text-muted-foreground">{item.type}</span>
+                  <CheckCircle2 className="w-3 h-3 text-green-400 mt-0.5" />
                 </motion.div>
               ))}
             </div>
